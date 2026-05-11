@@ -1,0 +1,94 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "arrayShape": "cr:arrayShape",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "containedIn": "cr:containedIn",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataBiases": "cr:dataBiases",
+    "dataCollection": "cr:dataCollection",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isArray": "cr:isArray",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "personalSensitiveInformation": "cr:personalSensitiveInformation",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "rai": "http://mlcommons.org/croissant/RAI/"
+  },
+  "@type": "sc:Dataset",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "repo",
+      "name": "repo",
+      "description": "The Hugging Face git repository.",
+      "contentUrl": "https://huggingface.co/datasets/legalcitebench/LegalCiteBench/tree/refs%2Fconvert%2Fparquet",
+      "encodingFormat": "git+https",
+      "sha256": "https://github.com/mlcommons/croissant/issues/80"
+    }
+  ],
+  "recordSet": [],
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "name": "LegalCiteBench",
+  "description": "\n\t\n\t\t\n\t\tLegalCiteBench\n\t\n\nLegalCiteBench is a benchmark for evaluating citation reliability in legal language models. It covers closed-book citation retrieval, citation completion, citation error detection, case matching, and case verification and correction.\nThis repository is anonymized for double-blind review. Public release links and full attribution will be provided after the review period.\n\n\t\n\t\t\n\t\tDataset Files\n\t\n\n\ndata/cat1_citation_retrieval.jsonl: citation retrieval… See the full description on the dataset page: https://huggingface.co/datasets/legalcitebench/LegalCiteBench.",
+  "alternateName": [
+    "legalcitebench/LegalCiteBench",
+    "LegalCiteBench"
+  ],
+  "creator": {
+    "@type": "Person",
+    "name": "legalcitebench",
+    "url": "https://huggingface.co/legalcitebench"
+  },
+  "keywords": [
+    "text-generation",
+    "question-answering",
+    "English",
+    "cc0-1.0",
+    "🇺🇸 Region: US",
+    "legal-nlp",
+    "legal-citation",
+    "benchmark",
+    "llm-evaluation",
+    "case-law"
+  ],
+  "license": "https://choosealicense.com/licenses/cc0-1.0/",
+  "url": "https://huggingface.co/datasets/legalcitebench/LegalCiteBench",
+  "rai:dataLimitations": "LegalCiteBench focuses on U.S. common-law jurisdictions and does not evaluate civil-law systems or non-U.S. legal citation conventions. Opinion-derived reference sets are conservative anchors for exact citation recovery and should not be interpreted as the only legally relevant authorities for open-ended legal research questions. The benchmark is intended for diagnostic evaluation rather than legal advice or certification of legal competence.",
+  "rai:dataBiases": "The dataset reflects the coverage, jurisdictional distribution, citation practices, and limitations of the sampled U.S. judicial opinions from the Case Law Access Project. The benchmark may underrepresent jurisdictions, legal topics, or citation patterns not present in the sampled source opinions. LLM-assisted prompt construction may also introduce residual prompt homogeneity.",
+  "rai:personalSensitiveInformation": "The dataset is constructed from public judicial opinions and may contain names, case facts, or legal information already present in public court records. The repository and metadata are anonymized for double-blind review and do not include author-identifying information.",
+  "rai:dataUseCases": "The dataset is intended for research on legal citation reliability in language models, including closed-book citation retrieval, citation completion, citation error detection, case matching, case verification, abstention behavior, and evaluation of misleading authority generation. It should not be used as legal advice or as a substitute for authoritative legal research.",
+  "rai:dataSocialImpact": "LegalCiteBench aims to support safer evaluation of legal-domain language models by identifying when models provide concrete but unreliable legal authorities. The benchmark may help researchers and practitioners diagnose citation-generation failures before deployment. However, improved benchmark performance should not be interpreted as legal competence, and generated citations should be independently verified using authoritative legal databases.",
+  "rai:hasSyntheticData": "Yes. The benchmark uses LLM-generated structured construction notes and prompts as intermediate construction artifacts. However, benchmark labels are anchored in non-generated sources: extracted citation lists for citation-level tasks and root-case metadata for case-level tasks."
+}
